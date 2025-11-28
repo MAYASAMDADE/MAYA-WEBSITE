@@ -1,5 +1,5 @@
 """
-WSGI config for ASH_OF_TREND project.
+WSGI config for MAYA project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ASH_OF_TREND.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MAYA.settings')
 
 application = get_wsgi_application()

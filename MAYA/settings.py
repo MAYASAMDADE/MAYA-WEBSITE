@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ASH_OF_TREND.urls'
+ROOT_URLCONF = 'MAYA.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ASH_OF_TREND.wsgi.application'
+WSGI_APPLICATION = 'MAYA.wsgi.application'
 
 
 # Database
