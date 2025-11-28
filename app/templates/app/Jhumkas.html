@@ -1,0 +1,43 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}jhumkas{% endblock title %}
+
+{% block main-content %}
+<div class="container my-5">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="list-group"><br><br><br>
+        <a href="{% url 'jhumkas' %}" class="list-group-item list-group-item-action" aria-current="true">All Jhumkas</a>
+        <a href="{% url 'jhumkadata' 'ASH Of Trend'|slugify %}" class="list-group-item list-group-item-action">ASH Of Trend</a>
+        <a href="{% url 'jhumkadata' 'Tiffany & Co.'|slugify %}" class="list-group-item list-group-item-action">Tiffany & Co.</a>
+        <a href="{% url 'jhumkadata' 'Cartier'|slugify %}" class="list-group-item list-group-item-action">Cartier</a>
+        <a href="{% url 'jhumkadata' 'Silvosia'|slugify %}" class="list-group-item list-group-item-action">Silvosia</a>
+        <a href="{% url 'jhumkadata' 'below'|slugify %}" class="list-group-item list-group-item-action">Below 300</a>
+        <a href="{% url 'jhumkadata' 'above'|slugify %}" class="list-group-item list-group-item-action">Above 300</a>
+      </div>
+    </div>
+
+    <div class="col-sm-8"><br><br><br>
+      <div class="row">
+        {% for product in jhumkas %}
+          <div class="col-sm-4 text-center mb-4">
+            <a href="{% url 'product-detail' product.id %}" class="btn">
+              <div class="item">
+                <img src="{{ product.product_image.url }}" alt="{{ product.title }}" height="300" class="img-fluid">
+                <div class="fw-bold">{{ product.title }}</div>
+                <div class="fw-bold">{{ product.brand }}</div>
+                <div class="fw-bold">Rs. {{ product.discounted_price }}
+                  <small class="fw-light text-decoration-line-through">Rs. {{ product.selling_price }}</small>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% empty %}
+          <p>No Jhumkas available for the selected filter.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock main-content %}

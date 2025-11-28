@@ -1,0 +1,151 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block banner_slider %}
+<br><br>
+<!--Banner Slider-->
+<br><br><div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'app/images/banner/b3.png' %}" class="d-block w-100" alt="..."> 
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/banner/b2.png' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/banner/banner3.png' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/banner/b1.png' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+
+{% endblock banner_slider %}
+
+{% block livesale %}
+<!-- Live Sale Section -->
+
+
+
+<div class="mx-3"><BR><BR>
+  <center><h2>Trending Floral Earrings</h2></center><BR>
+  <!-- Slider 4 -->
+  <center><div class="owl-carousel" id="slider4">
+   {% for FL in floral_earrings %} 
+   <a href="{% url 'product-detail' FL.id %}" class="btn"><div class="item"><img src="{{FL.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{FL.title}}</span><br><span class="fs-5">Rs. {{FL.discounted_price}} ID : {{FL.id}}</span></div></a>
+   {% endfor %}
+   </div>
+ </div></center>
+
+
+<div class="container">
+  <!--<div class="row bg-danger text-center p-5 text-white border-bottom shadow">
+    <h1>SALE IS LIVE NOW</h1>
+    <span>5% Instant Discount on Axis Bank Credit and Debit Card</span>
+    <small class="fw-lighter">Term and Condition Applied (For details visit Bank's official Website)</small>
+  </div>--><BR>
+  <img src="{% static 'app/images/banner/banner 1.png' %}" class="d-block w-100" alt="...">
+</div> 
+<!-- End Live Sale Section -->
+{% endblock livesale %}
+
+{% block main-content %}
+<!-- 1st Product Slider -->
+
+
+
+
+<div class="m-3">
+  <center><h2>ASH Of Trend Stud Earrings</h2></center>
+  <!-- Slider 1 -->
+  <center><div class="owl-carousel" id="slider1">
+  {% for s in studs %} 
+  <a href="{% url 'product-detail' s.id %}" class="btn"><div class="item"><img src="{{s.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{s.title}}</span><br><span class="fs-5">Rs. {{s.discounted_price}}</span></div></a>
+  <!--<div class="item"><img src="{% static 'app/images/product/s1 (1).png' %}" alt="" height="200px"><span class="fw-bold">Product 2</span><br><span class="fs-5">Rs. 300</span></div>
+  <div class="item"><img src="{% static 'app/images/product/s1 (2).png' %}" alt="" height="200px"><span class="fw-bold">Product 3</span><br><span class="fs-5">Rs. 100</span></div>
+  <div class="item"><img src="{% static 'app/images/product/s1 (3).png' %}" alt="" height="200px"><span class="fw-bold">Product 4</span><br><span class="fs-5">Rs. 700</span></div>
+  <div class="item"><img src="{% static 'app/images/product/s1 (4).png' %}" alt="" height="200px"><span class="fw-bold">Product 5</span><br><span class="fs-5">Rs. 500</span></div>
+  <div class="item"><img src="{% static 'app/images/product/s1 (5).png' %}" alt="" height="200px"><span class="fw-bold">Product 6</span><br><span class="fs-5">Rs. 400</span></div>
+  <div class="item"><img src="{% static 'app/images/product/s1 (6).png' %}" alt="" height="200px"><span class="fw-bold">Product 7</span><br><span class="fs-5">Rs. 500</span></div>
+  <div class="item"><img src="{% static 'app/images/product/s1 (7).png' %}" alt="" height="200px"><span class="fw-bold">Product 8</span><br><span class="fs-5">Rs. 300</span></div>
+  <div class="item"><img src="{% static 'app/images/product/s1 (8).png' %}" alt="" height="200px"><span class="fw-bold">Product 9</span><br><span class="fs-5">Rs. 600</span></div>
+  <div class="item"><img src="{% static 'app/images/product/s1 (9).png' %}" alt="" height="200px"><span class="fw-bold">Product 10</span><br><span class="fs-5">Rs. 900</span></div>
+  <div class="item"><img src="{% static 'app/images/product/s1 (10).png' %}" alt="" height="200px"><span class="fw-bold">Product 11</span><br><span class="fs-5">Rs. 100</span></div>
+  <div class="item"><img src="{% static 'app/images/product/s1 (11).png' %}" alt="" height="200px"><span class="fw-bold">Product 12</span><br><span class="fs-5">Rs. 200</span></div>-->
+  {% endfor %}
+  </div>
+</div>
+</center>
+<!-- End 1st Product Slider -->
+
+<!-- Payment Info Section -->
+<div class="container my-5">
+ <div class="row">
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+     <img src="{% static 'app/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+      <img src="{% static 'app/images/payavail/upi.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+      <img src="{% static 'app/images/payavail/nb.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+  <div class="col-sm-3">
+   <div class="card mb-3">
+     <div class="card-body">
+      <img src="{% static 'app/images/payavail/bj.jpg' %}" alt="" srcset="" class="img-fluid">
+     </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="mx-3">
+  <center><h2>Trending Geometric Earrings</h2></center><BR>
+  <!-- Slider 2 -->
+  <center><div class="owl-carousel" id="slider2">
+   {% for GE in geometric_earrings %} 
+   <a href="{% url 'product-detail' GE.id%}" class="btn"><div class="item"><img src="{{GE.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{GE.title}}</span><br><span class="fs-5">Rs. {{GE.discounted_price}}</span></div></a>
+   {% endfor %}
+  </div>
+ </div></center>
+ 
+ <br><br>
+<img src="{% static 'app/images/banner/banner 2.png' %}" class="d-block w-100" alt="...">
+<!-- End Payment Info Section -->
+
+<!-- 2nd Product Slider -->
+<div class="mx-3">
+ <center><h2>Trending Jhumkas</h2></center>
+ <!-- Slider 2 -->
+ <center><div class="owl-carousel" id="slider3">
+  {% for JH in jhumkas %} 
+  <a href="{% url 'product-detail' JH.id %}" class="btn"><div class="item"><img src="{{JH.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{JH.title}}</span><br><span class="fs-5">Rs. {{JH.discounted_price}}</span></div></a>
+  {% endfor %}
+  </div>
+</div></center>
+<!-- End 2nd Product Slider -->
+{% endblock main-content %}
+
